@@ -17,6 +17,7 @@ services:
        - db
      image: wordpress:latest
      volumes:
+      - wordpress:/var/www/html
       - ./src:/var/www/html/wp-content/plugins/
      ports:
        - "8000:80"
@@ -27,4 +28,5 @@ services:
        WORDPRESS_DB_PASSWORD: wordpress
        WORDPRESS_DB_NAME: wordpress
 volumes:
+    wordpress:
     db_data: {}
